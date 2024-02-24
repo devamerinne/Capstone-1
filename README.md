@@ -24,7 +24,7 @@ data_pasien = [
      'penyakit' : 'Diabetes'}]
 
 def back_read_admin():
-# Pernyataan untuk kembali ke menu utama 
+# Pernyataan untuk kembali ke menu utama laman admin
     utm = input("\nKetik 0 untuk kembali ke menu utama : ")
     while True:
         if utm == "0":
@@ -34,7 +34,7 @@ def back_read_admin():
         break
 
 def back_read_dokter():
-# Pernyataan untuk kembali ke menu utama
+# Pernyataan untuk kembali ke menu utama laman dokter
     utm = input("\nKetik 0 untuk kembali ke menu utama : ")
     while True:
         if utm == "0":
@@ -206,7 +206,8 @@ def delete(i):
     global data_pasien
     del data_pasien[i-1]
 
-# # SEARCH
+## SEARCH
+# Mencari data pasien di akun admin
 def search_admin():
     global data_pasien
     while True:
@@ -220,7 +221,6 @@ def search_admin():
                 print(f"{i+1}\t{data_pasien[i]['kode']}\t\t{data_pasien[i]['nama']}\t\t{data_pasien[i]['jenis_kelamin']}\t\t{data_pasien[i]['usia']}\t{data_pasien[i]['alamat']}\t{data_pasien[i]['ruang']}\t{data_pasien[i]['penyakit']}")
                 print("--------------------------------------------------------------------------------------------------------")
                 cari_nm = True
-                # back_read()
                 print("\nKetik 1 untuk cari lagi\nKetik 0 untuk kembali ke menu")
                 pilih = input("Silahkan pilih : ")
                 if pilih == "1":
@@ -236,6 +236,7 @@ def search_admin():
             if pilih == "0":
                 main_menu_admin()
 
+# Mencari data pasien di akun dokter
 def search_dokter():
     global data_pasien
     while True:
@@ -249,7 +250,6 @@ def search_dokter():
                 print(f"{i+1}\t{data_pasien[i]['kode']}\t\t{data_pasien[i]['nama']}\t\t{data_pasien[i]['jenis_kelamin']}\t\t{data_pasien[i]['usia']}\t{data_pasien[i]['alamat']}\t{data_pasien[i]['ruang']}\t{data_pasien[i]['penyakit']}")
                 print("--------------------------------------------------------------------------------------------------------")
                 cari_nm = True
-                # back_read()
                 print("\nKetik 1 untuk cari lagi\nKetik 0 untuk kembali ke menu")
                 pilih = input("Silahkan pilih : ")
                 if pilih == "1":
@@ -265,6 +265,7 @@ def search_dokter():
             if pilih == "0":
                 main_menu_dokter()
 
+# Mencari data pasien untuk pengunjung rumah sakit
 def search_pengunjung():
     global data_pasien
     while True:
@@ -278,20 +279,21 @@ def search_pengunjung():
                 print(f"{data_pasien[i]['nama']}\t{data_pasien[i]['jenis_kelamin']}\t\t{data_pasien[i]['usia']}\t{data_pasien[i]['alamat']}\t{data_pasien[i]['ruang']}")
                 print("---------------------------------------------------------------\n")
                 cari_nm = True
-                # back_read()
                 print("Ketik 1 untuk cari lagi\nKetik 0 untuk kembali ke dasbor utama")
                 pilih = input("Silahkan pilih : ")
                 if pilih == "1":
                     search_dokter()
                 if pilih == "0":
+                    bintang()
                     dasbor()
         if cari_nm  == False:
-            print(f"Nama pasien {nm} tidak ditemukan.\nMungkin pasien sudah pulang atau coba lengkapi nama pasien yang dicari.")
-            print("Ketik 1 untuk cari lagi\nKetik 0 untuk kembali ke dasbor utama")
+            print(f"\nNama pasien {nm} tidak ditemukan.\nMungkin pasien sudah pulang atau coba lengkapi nama pasien yang dicari.")
+            print("\nKetik 1 untuk cari lagi\nKetik 0 untuk kembali ke dasbor utama")
             pilih = input("Silahkan pilih : ")
             if pilih == "1":
                 search_dokter()
             if pilih == "0":
+                bintang()
                 dasbor()
 
 
@@ -313,7 +315,6 @@ SELAMAT DATANG ADMIN DI MENU UTAMA APLIKASI RS BAHAGIA SELALU
     while True:
         if menu == "1":
             read_admin()
-            # back_read()
         elif menu == "2":
             create()
             read_admin()
@@ -328,7 +329,6 @@ SELAMAT DATANG ADMIN DI MENU UTAMA APLIKASI RS BAHAGIA SELALU
             read_admin()
         elif menu == "5":
             search_admin()
-            # back_read()
         elif menu == "6":
             print("\nTerima kasih, sampai jumpa kembali\n")
             bintang()
@@ -354,8 +354,8 @@ SELAMAT DATANG DOKTER DI MENU UTAMA APLIKASI RS BAHAGIA SELALU
             search_dokter()
         elif menu == "3":
             print("\nTerima kasih, sampai jumpa kembali\n")
+            bintang()
             dasbor()
-        # dasbor()
 
 
 ## DASHBOARD
@@ -401,14 +401,13 @@ SELAMAT DATANG USER DOKTER RS BAHAGIA SELALU
                     pilih = input("Ketik 0 untuk kembali ke dasbor utama, ketik lainnya untuk login ulang : ")
                     if pilih == "0":
                         dasbor()
-
+        # Login untuk pengunjung
         elif usr == "3":
             print('''===================================
 SELAMAT DATANG DI RS BAHAGIA SELALU
 ===================================''')
             print("\nLaman ini untuk mencari nama pasien rawat inap RS Bahagia Selalu")
             search_pengunjung()
-            # print("Mohon Maaf Aplikasi untuk user tersebut sedang dalam proses")
         else:
             print("\nSilahkan pilih user yang sudah ada")
 
