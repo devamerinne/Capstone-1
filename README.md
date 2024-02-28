@@ -9,7 +9,7 @@ Program ini ditujukan untuk admin rumah sakit dalam mengelola kamar yang kosong 
 Untuk menginstal proyek ini, ikuti langkah-langkah berikut:
 1. Salin repositori ini ke komputer Anda:
 ```
-git clone https://github.com/[Nama Pengguna Anda]/[Nama Repositori Anda].git
+git clone https://github.com/devamerinne/Capstone-1
 ```
 2. Jalankan file python:
 ```
@@ -22,21 +22,25 @@ Untuk menggunakan proyek ini, ikuti langkah-langkah berikut:
 2. Ikuti petunjuk di layar.
 
 **Fitur**:  
-1. Menu utama
-   Menu pertama yang muncul dan digunakan untuk mengakses sub menu lainnya
-2. Menu Read.
-   Melihat seluruh atau sebagian laporan keluar masuk gudang dan terdapat fitur 
-   sort serta mencari kode barang. 
-3. Menu Create
-   Menu untuk membuat laporan baru baik laporan keluar ataupun masuk gudang. Serta 
-   membuat pesan untuk staff gudang.
-4. Menu Update
-   Menu untuk mengupdate laporan gudang yang telah terdaftar serta menyelesaikan   
-   pesan yang telah dibuat.
+1. Dashboard utama
+   Halaman ini pertama kali muncul dan digunakan untuk memilih akun personel rumah sakit
+2. a. Menu utama admin
+      Halaman pertama yang muncul saat akun admin login dan digunakan untuk mengakses sub menu lainnya.
+   b. Menu utama dokter
+      Halaman pertama yang muncul saat akun dokter login dan digunakan untuk mengakses sub menu lainnya.
+   c. Menu utama pengunjung
+      Halaman pertama yang muncuk saat akun pengunjung di pilih.
+3. Menu Read.
+   Melihat seluruh data pasian rawat inap RS. Bahagia Selalu dan terdapat fitur membaca data pasien secara lengkap.
+   Menu ini ada di ketiga akun pada dashboar utama, namun dikecualikan akun pengunjung tidak dapat melihat data pasien secara lengkap.
+5. Menu Create
+   Menu untuk membuat data masuk pasien rawat inap baru dan memasukkan kedalam data pasien.
+6. Menu Update
+   Menu untuk mengupdata data pasien yang sedang rawat inap.
 5. Menu Delete
-   Menghapus laporan yang ada dan mengembalikan data yang telah terhapus
-6. Menu Notice
-   Menu untuk melihat pesan yang belum terselesaikan dan riwayat pesan yang ada
+   Menghapus data pasien yang sudah di ijinkan untuk pulang.
+6. Menu Search
+   Menu untuk mencari data pasien berdasarkan nama lengkap. Menu ini ada di ketiga akun pada dashboard uatama.
 
 **Kontribusi**:  
 Anda dipersilakan untuk berkontribusi pada proyek ini. Untuk melakukannya, ikuti langkah-langkah berikut:
@@ -46,7 +50,7 @@ Anda dipersilakan untuk berkontribusi pada proyek ini. Untuk melakukannya, ikuti
 4. Kirim pull request ke repositori utama.
 
 **Informasi Kontak**:  
-Jika Anda memiliki pertanyaan atau masalah, silakan hubungi Muhamad Cahyo Wicaksono di cwicaksono300@gmail.com.
+Deva Merine dapat dihubungi melalui email devamerinne@gmail.com.
 
 **Penutup**  
-Terima Kasih atas perhatiaan dan minat anda terhadap project capstone saya.
+Terima Kasih.
