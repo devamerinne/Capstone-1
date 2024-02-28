@@ -1,4 +1,4 @@
-# Capstone-Project-Modul-1
+# Capstone Project Modul1 Data Pasien Rumah Sakit
 **Judul**:  
 Program CRUD untuk Data Pasien Rawat Inap RS. Bahagia Selalu
 
