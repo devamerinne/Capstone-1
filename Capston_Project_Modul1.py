@@ -72,10 +72,10 @@ def bintang():
         bar = bar + 1
     print (string)
 
-
 # READ
 def read_lengkap_admin ():
-    a = int(input("\nPilih No pasien untuk melihat data lengkap : "))
+    a = input("\nPilih No pasien untuk melihat data lengkap : ")
+    a = cek_program(a)
     print(f"\n-----Data Pasian kode {data_pasien[a-1]['kode']}-----\n")
     counter = 0
     for i in data_pasien[a-1]:
@@ -292,12 +292,14 @@ def notif():
     print("\tSilahkan ulangi di menu utama !\n")
     sleep(1)
 
+
 # UPDATE
 ## Mengedit daftar pasien yang sudah ada
 def update() :
     global data_pasien
     read1()
-    a = int(input("\nPilih No pasien yang akan di edit : "))
+    a = input("\nPilih No pasien yang akan di edit : ")
+    a = cek_program(a)
     counter = 0
     for i in data_pasien[a-1]:
         counter += 1
@@ -352,7 +354,6 @@ def update() :
 
     if b == 3:
         jenis_kelamin1 = input("\nSilahkan isi dengan data jenis kelamin pasien yang benar : ").capitalize()
-
         print("\nCoba cek kembali, apakah data sudah benar?")
         
         counter = 0
@@ -376,7 +377,6 @@ def update() :
 
     if b == 4:
         usia1 = input("\nSilahkan isi dengan data usia pasien yang benar : ")
-
         print("\nCoba cek kembali, apakah data sudah benar?")
         
         counter = 0
@@ -387,7 +387,6 @@ def update() :
             else :
                 print(f"{counter}. {i.capitalize()} \t: {data_pasien[a-1][i]}")
             
-
         print(f"\nApakah anda yankin mau mengedit {data_pasien[a-1]['usia']} menjadi {usia1}?")
         putusan = input("\nKetik [Y] untuk merubah data, ketik [N] untuk membatlkan : ").capitalize()
         if putusan == "Y":
@@ -445,12 +444,11 @@ def update() :
         else:
             notif()
 
-
-
 # DELETE
 ## Menghapus data pasien
 def delete():
-    i = int(input("Masukkan nomer pasien chekout : "))
+    i = input("Masukkan nomer pasien chekout : ")
+    i = cek_program(i)
     global data_pasien
     print("Apakah anda yakin mau menhghapus?")
     hps = input("Ketik [Y] untuk melanjutkan program, ketik [N] untuk membatalkan :").upper()
@@ -611,7 +609,6 @@ SELAMAT DATANG DOKTER DI MENU UTAMA APLIKASI RS BAHAGIA SELALU
             bintang()
             dasbor()
 
-
 # DASHBOARD
 ## Tampilan pertama kali buka aplikasi
 def dasbor():
@@ -676,5 +673,17 @@ SELAMAT DATANG DI RS BAHAGIA SELALU
         else:
             print("\nSilahkan pilih user yang sudah ada")
 
+def cek_program(program):
+    while program.isnumeric() == False:
+        print("\t-----Pilih sesuai opsi-----")
+        program = input("Pilih sesuai opsi : ")
+    program = int(program)
+    while program > len(data_pasien):
+        print (f"Masukkan input dari nomer 1 sampai {len(data_pasien)} saja")
+        program = input("Pilih sesuai opsi : ")
+        program = cek_program(program)
+    return program
+
 bintang()
 dasbor()
+
