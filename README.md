@@ -9,7 +9,7 @@ Program ini ditujukan untuk admin rumah sakit dalam mengelola kamar yang kosong 
 Untuk menginstal proyek ini, ikuti langkah-langkah berikut:
 1. Salin repositori ini ke komputer Anda:
 ```
-git clone https://github.com/devamerinne/Capstone-1
+https://github.com/devamerinne/Capstone-1
 ```
 2. Jalankan file python:
 ```
